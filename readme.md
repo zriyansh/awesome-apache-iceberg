@@ -1,294 +1,287 @@
-# ❄️ Awesome Iceberg
+# Awesome Apache Iceberg [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-![GitHub stars](https://img.shields.io/github/stars/zriyansh/awesome-iceberg?style=social)
-![License](https://img.shields.io/github/license/zriyansh/awesome-iceberg)
+> A curated list of awesome Apache Iceberg resources, tools, and learning materials
 
-> **Awesome Iceberg** is a curated list of resources, tools, and technologies that empower data engineers and analysts to leverage Apache Iceberg for building scalable, efficient, and reliable data solutions.
+Apache Iceberg is an open table format for huge analytic datasets that provides ACID transactions, schema evolution, time travel, and unified batch and streaming data processing.
 
-## Table of Contents 📚
+## Contents
 
-- [❄️ Awesome Iceberg](#-awesome-iceberg)
-  - [Table of Contents 📚](#table-of-contents-)
-  - [🚀 Introduction](#-introduction)
-  - [🔑 Core Sections](#-core-sections)
-    - [1. Iceberg Fundamentals](#1-iceberg-fundamentals)
-    - [2. Key Iceberg Technologies](#2-key-iceberg-technologies)
-    - [3. ETL/ELT Tools for Iceberg](#3-etlel-tools-for-iceberg)
-    - [4. Data Orchestration](#4-data-orchestration)
-    - [5. BI and Analytics on Iceberg](#5-bi-and-analytics-on-iceberg)
-    - [6. ML and AI Workflows](#6-ml-and-ai-workflows)
-    - [7. Monitoring and Observability](#7-monitoring-and-observability)
-    - [8. Cost Optimization](#8-cost-optimization)
-  - [📂 Additional Sections](#-additional-sections)
-    - [1. Use Cases and Real-world Applications](#1-use-cases-and-real-world-applications)
-    - [2. Tutorials and Learning Resources](#2-tutorials-and-learning-resources)
-    - [3. Open-source Projects](#3-open-source-projects)
-    - [4. Comparison Tables](#4-comparison-tables)
-  - [🌟 Influential Personalities](#-influential-personalities)
-  - [🤝 Contributing](#-contributing)
-  - [📄 License](#-license)
-  - [📢 Acknowledgements](#-acknowledgements)
+- [Official Resources](#official-resources)
+- [Key People](#key-people)
+- [Conference Talks](#conference-talks)
+- [Blog Posts & Articles](#blog-posts--articles)
+- [Vendor Documentation](#vendor-documentation)
+- [Open Source Tools](#open-source-tools)
+- [Comparisons](#comparisons)
+- [Books & Courses](#books--courses)
+- [Community](#community)
+- [Companies Using Iceberg](#companies-using-iceberg)
+- [Podcasts](#podcasts)
+- [Best Practices](#best-practices)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Integration Guides](#integration-guides)
+- [Ecosystem Tools](#ecosystem-tools)
+
+## Official Resources
+
+### Core Documentation
+- **[Official Website](https://iceberg.apache.org)** - Main entry point with overview and features
+- **[Documentation](https://iceberg.apache.org/docs/latest/)** - Comprehensive docs covering all libraries and integrations
+- **[Specification](https://iceberg.apache.org/spec/)** - Official format specification (stable with new features each version)
+- **[Multi-Engine Support](https://iceberg.apache.org/multi-engine-support/)** - Compatibility matrix for Spark, Flink, and Hive versions
+
+### GitHub Repositories
+- **[apache/iceberg](https://github.com/apache/iceberg)** - Core Java implementation (6.3k+ stars)
+- **[apache/iceberg-python](https://github.com/apache/iceberg-python)** - PyIceberg - Python implementation (748 stars)
+- **[apache/iceberg-rust](https://github.com/apache/iceberg-rust)** - Rust implementation (700+ stars)
+- **[apache/iceberg-go](https://github.com/apache/iceberg-go)** - Go implementation with CLI tools (200+ stars)
+- **[apache/iceberg-cpp](https://github.com/apache/iceberg-cpp)** - C++ implementation
+
+## Key People
+
+### Original Creators (Netflix)
+- **Ryan Blue** - Co-creator, PMC Chair
+  - [LinkedIn](https://www.linkedin.com/in/rdblue/) | [GitHub](https://github.com/rdblue)
+- **Daniel Weeks** - Co-creator, PMC member
+  - [LinkedIn](https://www.linkedin.com/in/daniel-weeks-a1946860/) | [GitHub](https://github.com/danielcweeks)
+- **Jason Reid** - Co-founder Tabular
+  - [LinkedIn](https://www.linkedin.com/in/jasonreid/)
+
+### Active PMC Members & Contributors
+- **Fokko Driesprong** - PMC member, very active contributor
+  - [LinkedIn](https://www.linkedin.com/in/fokkodriesprong/) | [GitHub](https://github.com/fokko)
+- **Total**: 21 PMC members, 32 committers as of December 2024
+
+## Conference Talks
+
+### Iceberg Summit
+- **[Iceberg Summit 2024](https://www.youtube.com/playlist?list=PLkifVhhWtccxBSrKFPXOmjAFFEpeYii5K)** - All 32 recordings from inaugural summit (May 14-15, 2024)
+  - Ryan Blue keynote: "The Quiet Revolution"
+  - 2,200+ attendees, virtual and free
+- **[Iceberg Summit 2025](https://www.youtube.com/playlist?list=PLkifVhhWtccxMcqWlXXFvjJybisFF7ESh)** - April 8 (in-person), April 9 (virtual)
+
+### Major Conference Presentations
+- **Flink Forward** - Regular Iceberg sessions on streaming analytics
+  - "Streaming Event-Time Partitioning With Apache Flink and Apache Iceberg" - Julia Bennett (Netflix)
+- **Data + AI Summit** - Annual Iceberg integration sessions
+- **QCon** - Engineering practices and architectural patterns
+
+## Blog Posts & Articles
+
+### Introduction & Overview
+- **[Apache Iceberg University](https://university.dremio.com/course/apache-iceberg)** - Your guide to learning concepts and practices
+- **[Apache Iceberg: A Beginner's Complete Guide](https://www.datacamp.com/tutorial/apache-iceberg/)** - DataCamp's complete introduction
+
+### Technical Deep Dives
+- **[Iceberg at Netflix: Data Platform Architecture](https://netflixtechblog.com/)** - Netflix Engineering Team
+- **[AutoOptimize: Netflix's Data Layout Optimization](https://netflixtechblog.com/optimizing-data-warehouse-storage-7b94a48fdcbe)** - Automatic file optimization at petabyte scale
+- **[FastIngest: Low-latency Gobblin with Apache Iceberg](https://www.linkedin.com/blog/engineering/open-source/fastingest-low-latency-gobblin)** - LinkedIn's 45min to 5min latency reduction
+
+### Migration Guides
+- **[Your Guide to Migrating to an Apache Iceberg Lakehouse](https://www.dremio.com/blog/migration-guide-for-apache-iceberg-lakehouses/)** - Comprehensive migration strategies
+- **[Migrating to Apache Iceberg: A Complete Guide](https://medium.com/@hugolu87/migrating-to-an-iceberg-lakehouse-key-architecture-considerations-08e636890ab5/)** - Medium article by Hugo Lu.
+
+## Vendor Documentation
+
+### Cloud Providers
+- **AWS**
+  - [AWS Prescriptive Guidance](https://aws.amazon.com/prescriptive-guidance/) - Best practices for Iceberg on AWS
+  - [Amazon Athena](https://docs.aws.amazon.com/athena/) - Native Iceberg v1.4.2 support
+  - [AWS Glue](https://docs.aws.amazon.com/glue/) - ETL jobs and Data Catalog integration
+  - [Amazon EMR](https://docs.aws.amazon.com/emr/) - Support from version 6.5.0+
+
+- **Google Cloud**
+  - BigLake Iceberg Support - BigQuery integration
+  - Dataproc Integration - Spark, Hive, Presto support
+  - Cloud Storage - Native support as underlying storage
+
+- **Microsoft Azure**
+  - Azure Synapse Analytics - Added support in 2022
+  - Azure Data Factory - Iceberg dataset support
+  - Microsoft Fabric/OneLake - Iceberg shortcuts and virtual links
+  - Microsoft Purview - Native Iceberg governance (public preview)
+
+### Data Platforms
+- **Databricks**
+  - Managed Iceberg tables through Unity Catalog
+  - REST Catalog API for external engines
+  - UniForm for Delta-Iceberg interoperability
+
+- **Snowflake**
+  - Generally available Iceberg tables support
+  - External volume configuration
+  - Cross-cloud/cross-region support
+  - Support for Iceberg v1 and v2 specifications
+
+- **Dremio**
+  - Native Iceberg support (v21.0+)
+  - Built-in catalog based on Apache Polaris
+  - Automated data maintenance operations
+
+- **Tabular** (Acquired by Databricks June 2024)
+  - Founded by Iceberg creators
+  - No longer accepting new signups
+
+## Open Source Tools
+
+### Catalog Implementations
+- **[Project Nessie](https://github.com/projectnessie/nessie)** - Git-like version control for data (1.2k stars)
+- **[Lakekeeper](https://github.com/lakekeeper/lakekeeper)** - Secure REST catalog with fine-grained access control (350+ stars)
+- **Apache Polaris** - Snowflake's open-source metadata catalog (merging with Nessie)
+
+### Migration Tools
+- **[Iceberg Catalog Migrator](https://github.com/projectnessie/iceberg-catalog-migrator)** - Bulk migration between catalogs
+- **[Apache XTable](https://github.com/apache/xtable)** - Cross-table converter for Delta, Hudi, Iceberg (800+ stars)
+
+### REST Catalog Implementations
+- **[Tabular Iceberg REST](https://github.com/tabular-io/iceberg-rest-image)** - Docker image for REST API (200+ stars)
+- **[Cloudcheflabs Iceberg REST Catalog](https://github.com/cloudcheflabs/iceberg-rest-catalog)** - Easy-to-deploy server
+
+## Comparisons
+
+### Iceberg vs Delta Lake vs Hudi
+- **Engine Support**: Iceberg has broadest multi-engine support (Spark, Trino, Flink, Presto, Hive, Impala)
+- **Vendor Independence**: 100% open source under Apache governance
+- **Schema Evolution**: In-place evolution without table rewrites
+- **Performance**: Faster updates and deletes compared to alternatives
+- **Maintenance**: Simpler operating model, no compaction required
+
+### When to Choose Iceberg
+- Multi-engine environments requiring vendor neutrality
+- Large-scale analytics with complex schema evolution needs
+- Cloud-native architectures with multiple storage systems
+- Real-time and batch processing hybrid workloads
+
+## Books & Courses
+
+### Books
+- **[Apache Iceberg: The Definitive Guide](https://www.dremio.com/wp-content/uploads/2023/02/apache-iceberg-TDG_ER1.pdf)** - O'Reilly Media
+  - Authors: Tomer Shiran, Jason Hughes, Alex Merced (Dremio)
+  - Comprehensive guide covering fundamentals to production
+
+### Online Courses
+- **Dremio University**
+  - "Introduction to Apache Iceberg" by Alex Merced
+  - Advanced Analytics Course by Andrew Madson
+- **Apache Iceberg 101 Course Series**
+  - Video course with hands-on exercises
+  - Topics: Data Lakehouse concepts, transactions, catalogs, time-travel
+
+## Community
+
+### Communication Channels
+- **[Slack Workspace](https://iceberg.apache.org/community/)** - Primary community channel
+  - Channels: #jobs, #python, #meetup-{city}, vendor-{company}
+- **Mailing Lists**
+  - dev@iceberg.apache.org - Community discussions
+  - commits@iceberg.apache.org - Commit notifications
+  - issues@iceberg.apache.org - Github issue tracking
+  - private@iceberg.apache.org - Private discussions for PMC members
+
+### Community Events
+- **[Iceberg Community Events](https://calendar.google.com/calendar/u/0?cid=NTkzYmIwMGJmZTQ1N2QzMTkxNDEzNTBkZDI0Yzk2NGYzOWJkYmQ5ZmQyNDMyODFhODYzMmEwMDk2M2EyMWQ4NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)** - Events such as conferences and meetups, aimed to educate and inspire Iceberg users.
+- **[Iceberg Dev Events](https://calendar.google.com/calendar/u/0?cid=MzkwNWQ0OTJmMWI0NTBiYTA3MTJmMmFlNmFmYTc2ZWI3NTdmMTNkODUyMjBjYzAzYWE0NTI3ODg1YWRjNTYyOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)** - Events such as the triweekly Iceberg sync, aimed to discuss the project roadmap and how to implement features.
+**Iceberg Summit** - Annual conference (2,200+ attendees in 2024)
+- **Meetup Groups** - Active in Bay Area, NYC, Seattle, Chicago, Boston, Atlanta, Austin, Orlando
+- **Community Syncs** - Regular online meetings for project updates
+
+### Development
+- **[GitHub Issues](https://github.com/apache/iceberg/issues)** - Bug reports and feature requests
+- **[Contributing Guide](https://iceberg.apache.org/contribute/)** - How to contribute
+
+## Companies Using Iceberg
+
+### Major Production Users
+- **Netflix** - Original creator, 1M+ tables, petabyte-scale daily processing
+  - Query planning: 9.6min (Hive) → 42sec (Iceberg)
+- **Adobe** - 13TB/day processing, 80% of cloud data lake on Iceberg
+- **Airbnb** - 50% compute resource savings, 40% job time reduction
+- **LinkedIn** - Kafka ingestion reduced from 45min to 5min
+- **Apple** - AIML data platform with Flink streaming
+- **Stripe**, **Expedia**, **Lyft**, **Alibaba**, **Salesforce**
+
+## Podcasts
+
+### Data Engineering Podcast
+- Ryan Blue: "The Evolution and Applications of the Iceberg Table Format"
+- Jason Reid: Focus on open-source modern data stack
+- Kevin Liu (Stripe): Trino and Iceberg for analytical workloads
+- Tulika Bhatt (Netflix): Large-scale data processing
+
+### The Data Stack Show
+- Regular discussions on Apache Iceberg developments
+- Open table format standards analysis
+
+## Best Practices
+
+### Table Design & Schema Evolution
+- AWS Prescriptive Guidance - Format recommendations, compression (ZSTD)
+- Cloudera Best Practices - Production-proven from TPC-DS benchmarking
+
+### Performance Tuning
+- Partitioning strategies and hidden partitioning benefits
+- Compaction techniques (binpack, sort, Z-order)
+- File size optimization and clustering
+
+### Production Deployment
+- Snapshot management and expiration policies
+- Orphan file cleanup procedures
+- Multi-engine architecture considerations
+
+## Performance Benchmarks
+
+### Third-Party Studies
+- **Synvert 2022** - Iceberg fastest for inserts, updates (10x faster than Delta), deletes
+- **Brooklyn Data TPC-DS** - Performance variations across workload types
+
+### Real-World Metrics
+- **Netflix**: 10x performance improvement with clustered data
+- **Adobe**: 15 commits/minute in production
+- **AWS Financial Services**: Better metadata handling, reduced task failures
+
+## Integration Guides
+
+### Compute Engines
+- **Apache Spark** - Native DataSource V2 API, full SQL DDL/DML support
+- **Apache Flink** - Streaming writes, CDC support, exactly-once semantics
+- **Trino/Presto** - Native connector with multiple catalog support
+
+### Query Engines
+- **Dremio** - Built-in Polaris catalog, time travel
+- **Starburst** - Kafka to Iceberg streaming ingestion
+- **Amazon Athena** - Native support with AWS Glue integration
+
+### File Formats
+- **Apache Parquet** - Default and primary format
+- **Apache ORC** - Optional support via iceberg-orc module
+- **Apache Avro** - Often used for streaming scenarios
+
+## Ecosystem Tools
+
+### CLI Tools
+- **Iceberg Diagnostic Tool** (Upsolver) - Performance analysis (`brew install iceberg-diag`)
+- **Iceberg Go CLI** - Command-line operations
+- **Nessie CLI** - Git-like operations for Nessie catalogs
+
+### Monitoring & Observability
+- **DQOps** - Data quality monitoring with native Iceberg support
+- **Rakuten SixthSense** - Purpose-built observability for Iceberg
+- **AWS CloudWatch Integration** - Lambda-based metrics collection
+
+### Development Tools
+- **[Ducklake](https://github.com/ziwon/ducklake)** - Lightweight data lake with DuckDB (100+ stars)
+- **Tabulario Docker Images** - Pre-configured Spark + Iceberg environments
+
+### Governance & Security
+- **AWS Lake Formation** - Fine-grained access control
+- **Lakekeeper Authorization** - OpenFGA-based access control
+- **Built-in Auditing** - Stage changes for validation before commits
 
 ---
 
-## 🚀 Introduction
 
-Welcome to **Awesome Iceberg**, your comprehensive repository for everything related to [Apache Iceberg](https://iceberg.apache.org/). Apache Iceberg is an open table format for huge analytic datasets that offers reliable and high-performance data management for your data lake.
+## License
 
-Whether you're a data engineer, architect, analyst, or enthusiast, this repository provides a curated collection of tools, technologies, resources, and best practices to help you effectively utilize Apache Iceberg in your data solutions.
+[![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0)
 
-⭐️ If you find this repository helpful, please [star this repo](https://github.com/zriyansh/awesome-iceberg) to show your support!
-
----
-
-## 🔑 Core Sections
-
-### 1. Iceberg Fundamentals
-
-#### Introduction to Apache Iceberg
-Apache Iceberg is a high-performance table format for large analytic datasets. It brings the reliability and ease of use of SQL tables to big data while ensuring scalability and performance.
-
-**Key Characteristics:**
-- **Schema Evolution:** Supports adding, dropping, and renaming columns without impacting existing queries.
-- **Partition Evolution:** Allows changing partitioning schemes without rewriting data.
-- **ACID Transactions:** Ensures data consistency and integrity.
-- **Hidden Partitioning:** Simplifies query planning and optimization.
-- **Time Travel:** Enables querying historical data snapshots.
-
-#### Foundational Resources
-- [Apache Iceberg Official Website](https://iceberg.apache.org/)
-- [Apache Iceberg Documentation](https://iceberg.apache.org/docs/)
-- [Introducing Apache Iceberg](https://iceberg.apache.org/blog/introducing-iceberg/) - Official Blog Post
-- [Iceberg: Table Format for Large Analytics Datasets](https://www.slideshare.net/IcebergProject/iceberg-table-format-for-large-analytics-datasets) - SlideShare Presentation
-- [Academic Papers on Iceberg](https://scholar.google.com/scholar?q=apache+iceberg+table+format)
-
-### 2. Key Iceberg Technologies
-
-#### Storage Layers
-- [Apache Iceberg](https://iceberg.apache.org/) - Core table format for managing large datasets.
-- [Delta Lake](https://delta.io/) - Complementary storage layer providing ACID transactions.
-- [Apache Hudi](https://hudi.apache.org/) - Another storage layer option with unique features.
-
-#### Query Engines
-- [Apache Spark](https://spark.apache.org/) - Unified analytics engine for large-scale data processing.
-- [Trino](https://trino.io/) - High-performance distributed SQL query engine.
-- [Presto](https://prestodb.io/) - Distributed SQL query engine for big data.
-- [Flink](https://flink.apache.org/) - Stream processing framework.
-- [Hive](https://hive.apache.org/) - Data warehouse software for querying and managing large datasets.
-
-#### Metadata Management
-- [Hive Metastore](https://cwiki.apache.org/confluence/display/Hive/Hive+Metastore) - Central repository for metadata.
-- [Amundsen](https://www.amundsen.io/) - Data discovery and metadata engine.
-- [DataHub](https://datahubproject.io/) - Metadata platform for the modern data stack.
-- [Apache Atlas](https://atlas.apache.org/) - Governance and metadata framework.
-
-### 3. ETL/ELT Tools for Iceberg
-
-#### Open-source
-- [Airbyte](https://airbyte.com/) - Open-source data integration platform.
-- [Meltano](https://meltano.com/) - Open-source data integration tool built on Singer.
-- [dbt (data build tool)](https://www.getdbt.com/) - Transform data in your warehouse more effectively.
-
-#### Commercial
-- [Fivetran](https://fivetran.com/) - Automated data integration.
-- [Matillion](https://www.matillion.com/) - Data integration and transformation tool.
-
-#### Stream Processing
-- [Apache Kafka](https://kafka.apache.org/) - Distributed event streaming platform.
-- [Apache Flink](https://flink.apache.org/) - Stream processing framework.
-- [Spark Streaming](https://spark.apache.org/streaming/) - Scalable stream processing.
-
-### 4. Data Orchestration
-- [Apache Airflow](https://airflow.apache.org/) - Platform to programmatically author, schedule, and monitor workflows.
-- [Dagster](https://dagster.io/) - Data orchestrator for machine learning, analytics, and ETL.
-- [Prefect](https://www.prefect.io/) - Workflow management system.
-
-### 5. BI and Analytics on Iceberg
-- [Superset](https://superset.apache.org/) - Modern data exploration and visualization platform.
-- [Looker](https://looker.com/) - Business intelligence software.
-- [Tableau](https://www.tableau.com/) - Interactive data visualization.
-- [Power BI](https://powerbi.microsoft.com/) - Business analytics service by Microsoft.
-- [Hex](https://hex.tech/) - Collaborative data workspace.
-
-### 6. ML and AI Workflows
-- [MLflow](https://mlflow.org/) - Open-source platform for managing the ML lifecycle.
-- [Kubeflow](https://kubeflow.org/) - Machine learning toolkit for Kubernetes.
-- [H2O.ai](https://www.h2o.ai/) - Open-source AI platform.
-- [Databricks Machine Learning](https://www.databricks.com/product/machine-learning) - Unified environment for ML.
-
-### 7. Monitoring and Observability
-- [OpenTelemetry](https://opentelemetry.io/) - Observability framework for cloud-native software.
-- [Prometheus](https://prometheus.io/) - Monitoring system and time series database.
-- [Grafana](https://grafana.com/) - Open-source analytics and monitoring platform.
-- [Great Expectations](https://greatexpectations.io/) - Data validation framework.
-
-### 8. Cost Optimization
-- [DuckDB](https://duckdb.org/) - An in-process SQL OLAP Database Management System.
-- [ClickHouse](https://clickhouse.com/) - Fast open-source column-oriented database management system.
-- [Materialize](https://materialize.com/) - Streaming database for real-time applications.
-
----
-
-## 📂 Additional Sections
-
-### 1. Use Cases and Real-world Applications
-
-Apache Iceberg is transforming various industries by providing scalable and efficient data solutions. Here are some examples:
-
-- **E-commerce**: Real-time inventory management, personalized recommendations, and customer behavior analysis.
-- **Healthcare**: Patient data integration, predictive analytics for treatment outcomes, and operational efficiency.
-- **Finance**: Fraud detection, risk management, real-time trading analytics, and regulatory compliance.
-- **Media & Entertainment**: Content recommendation engines, audience analytics, and personalized marketing.
-- **Manufacturing**: Predictive maintenance, supply chain optimization, and quality control.
-- **Telecommunications**: Network performance monitoring, customer behavior analysis, and churn prediction.
-- **Energy**: Smart grid data management, predictive maintenance for infrastructure, and resource optimization.
-
-### 2. Tutorials and Learning Resources
-
-Enhance your knowledge with these beginner-friendly guides, tutorials, and courses:
-
-#### **Guides & Blogs**
-- [Apache Iceberg Documentation](https://iceberg.apache.org/docs/)
-- [Getting Started with Apache Iceberg](https://iceberg.apache.org/getting-started/)
-- [Iceberg vs. Delta Lake vs. Hudi](https://databricks.com/blog/2020/12/07/iceberg-vs-delta-lake-vs-hudi.html)
-- [Towards Data Science - Apache Iceberg Articles](https://towardsdatascience.com/tagged/apache-iceberg)
-- [Databricks Blog on Iceberg](https://databricks.com/blog/2021/01/15/introducing-apache-iceberg.html)
-
-#### **Video Tutorials**
-- [YouTube - Apache Iceberg Tutorials](https://www.youtube.com/results?search_query=apache+iceberg+tutorial)
-- [Databricks YouTube Channel](https://www.youtube.com/c/Databricks)
-- [Confluent YouTube Channel](https://www.youtube.com/user/confluentinc)
-- [Simplilearn - Iceberg Tutorials](https://www.youtube.com/results?search_query=simplilearn+apache+iceberg)
-- [edureka! Data Engineering Tutorials](https://www.youtube.com/user/edurekaIN/search?query=apache+iceberg)
-
-#### **Courses**
-- [Udemy: Apache Iceberg Essentials](https://www.udemy.com/course/apache-iceberg-essentials/) *(Hypothetical Link)*
-- [Coursera: Data Engineering on Google Cloud](https://www.coursera.org/specializations/gcp-data-engineering)
-- [LinkedIn Learning: Modern Data Warehousing with Apache Iceberg](https://www.linkedin.com/learning/topics/apache-iceberg)
-- [Pluralsight: Advanced Data Engineering with Apache Iceberg](https://www.pluralsight.com/search?q=apache+iceberg)
-
-### 3. Open-source Projects
-
-Explore trending repositories and libraries in the Apache Iceberg ecosystem:
-
-- [Apache Iceberg](https://github.com/apache/iceberg) - Core project repository.
-- [lakeFS](https://github.com/treeverse/lakeFS) - Git-like version control for data lakes.
-- [Great Expectations](https://github.com/great-expectations/great_expectations) - Data validation framework.
-- [Delta Sharing](https://github.com/delta-io/delta-sharing) - Open protocol for secure data sharing.
-- [Materialize](https://github.com/MaterializeInc/materialize) - Streaming SQL database for real-time analytics.
-- [Airbyte](https://github.com/airbytehq/airbyte) - Data integration platform.
-- [Amundsen](https://github.com/amundsen-io/amundsen) - Data discovery and metadata engine.
-- [DataHub](https://github.com/datahub-project/datahub) - Metadata platform for the modern data stack.
-
-### 4. Comparison Tables
-
-#### Apache Iceberg vs. Delta Lake vs. Apache Hudi
-
-| Feature                     | Apache Iceberg                                  | Delta Lake                                      | Apache Hudi                                   |
-|-----------------------------|-------------------------------------------------|-------------------------------------------------|-----------------------------------------------|
-| **ACID Transactions**       | ✅                                              | ✅                                               | ✅                                            |
-| **Schema Evolution**        | ✅                                              | ✅                                               | ✅                                            |
-| **Time Travel**             | ✅                                              | ✅                                               | ✅                                            |
-| **Upserts/Merge**           | ✅                                              | ✅                                               | ✅                                            |
-| **Partitioning**            | Hidden and dynamic partitioning                 | Dynamic and static partitioning                 | Globally sorted partitioning                  |
-| **Performance Optimization**| Partition pruning, metadata caching            | Data skipping, Z-order clustering               | Indexing, clustering                          |
-| **Integration**             | Broad integration with various query engines   | Strong integration with Databricks and Spark    | Integration with Spark and Flink              |
-| **Community & Adoption**    | Growing community, part of Apache Foundation    | Large community, backed by Databricks           | Active community, part of Apache Foundation   |
-| **Use Cases**               | Large-scale data warehousing, data lake management | Real-time analytics, data lakes with ACID support | Streaming data ingestion, incremental processing|
-
----
-
-## 🌟 Influential Personalities
-
-Stay updated with insights and trends from leading experts in the Apache Iceberg and data engineering space:
-
-### **1. Ryan Blue**
-- **Role**: Co-Creator of Apache Iceberg
-- **Twitter**: [@ryanblue](https://twitter.com/ryanblue)
-- **LinkedIn**: [Ryan Blue](https://www.linkedin.com/in/ryanblue/)
-- **Blog**: [Ryan's Medium](https://medium.com/@ryanblue)
-
-### **2. Benjamin Haimowitz**
-- **Role**: Software Engineer at Netflix, Contributor to Apache Iceberg
-- **Twitter**: [@benhaimowitz](https://twitter.com/benhaimowitz)
-- **LinkedIn**: [Benjamin Haimowitz](https://www.linkedin.com/in/benjaminhaimowitz/)
-- **Blog**: [Benjamin's Blog](https://benhaimowitz.com/)
-
-### **3. Paige Nord**
-- **Role**: Software Engineer at Netflix, Contributor to Apache Iceberg
-- **Twitter**: [@paigenord](https://twitter.com/paigenord)
-- **LinkedIn**: [Paige Nord](https://www.linkedin.com/in/paigenord/)
-- **Blog**: [Paige's Medium](https://medium.com/@paigenord)
-
-### **4. Robin Moffatt**
-- **Role**: Developer Advocate at Netflix, Contributor to Apache Iceberg
-- **Twitter**: [@robinmoffatt](https://twitter.com/robinmoffatt)
-- **LinkedIn**: [Robin Moffatt](https://www.linkedin.com/in/robinmoffatt/)
-- **Blog**: [Robin's Blog](https://robinmoffatt.com/)
-
-### **5. James Nestor**
-- **Role**: Data Engineer at various organizations, Contributor to Apache Iceberg
-- **Twitter**: [@jamesnestor](https://twitter.com/jamesnestor)
-- **LinkedIn**: [James Nestor](https://www.linkedin.com/in/jamesnestor/)
-- **Blog**: [James's Medium](https://medium.com/@jamesnestor)
-
-### **6. Maxime Beauchemin**
-- **Role**: Creator of Apache Airflow and Apache Superset
-- **Twitter**: [@m_beauchemin](https://twitter.com/m_beauchemin)
-- **LinkedIn**: [Maxime Beauchemin](https://www.linkedin.com/in/maximebeauchemin/)
-- **Blog**: [Maxime's Blog](https://maximebeauchemin.com/)
-
----
-
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. **Fork the Project**
-2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-Please ensure your pull request adheres to the [repository guidelines](CONTRIBUTING.md).
-
-### Contribution Guidelines
-
-- **Code of Conduct**: Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md).
-- **Issue Reporting**: Use [Issues](https://github.com/zriyansh/awesome-iceberg/issues) to report bugs or suggest enhancements.
-- **Style Guide**: Follow the [Markdown Style Guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for consistency.
-- **Adding Resources**: When adding new resources, ensure they are relevant, up-to-date, and properly categorized.
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-## 📢 Acknowledgements
-
-- Inspired by the [Awesome](https://github.com/sindresorhus/awesome) repository guidelines.
-- Special thanks to all the contributors and the open-source community.
-- Resources and content curated from leading industry experts and authoritative sources.
-- [Apache Software Foundation](https://apache.org/), [Netflix](https://netflixtechblog.com/), and other foundational organizations in the Iceberg ecosystem.
-
----
-
-## 📚 Additional Resources
-
-### **Emojis and Styling**
-Emojis are used to enhance visual appeal. Adjust as necessary to fit your style preferences.
-
-### **Contribution Files**
-- **[CONTRIBUTING.md](CONTRIBUTING.md)**: Detailed guidelines for contributors.
-- **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)**: Community standards and expectations.
-
-### **Badges**
-Replace `zriyansh` with your actual GitHub username in the badge URLs to ensure they display correctly.
-
----
-
-Feel free to customize the content further to better fit your vision for the **Awesome Iceberg** repository!
-
+To the extent possible under law, the contributors have waived all copyright and related or neighboring rights to this work.
